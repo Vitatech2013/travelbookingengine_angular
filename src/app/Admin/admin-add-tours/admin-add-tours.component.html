@@ -1,0 +1,53 @@
+<div>
+    <form [formGroup]="addtourform" (ngSubmit)="posttour()">
+        <mat-card>
+            <mat-toolbar color="primary">Admin Add-Tours</mat-toolbar>
+          <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline" class="mt-4">
+                    <mat-label>TourName</mat-label>
+                    <input matInput formControlName="tourname">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline" class="mt-4">
+                    <mat-label>Source</mat-label>
+                    <input matInput formControlName="source">
+                </mat-form-field>
+            </div>
+          </div> 
+          <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Destination</mat-label>
+                    <input matInput formControlName="destination">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <input matInput formControlName="desc">
+                </mat-form-field>
+            </div>
+          </div> 
+          <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <input matInput formControlName="price">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Mobile No</mat-label>
+                    <input matInput formControlName="mobileno">
+                </mat-form-field>
+            </div>
+          </div> 
+          <div class="text-end mb-3 ms-3 me-5">
+            <button mat-raised-button class="me-3" color="warn">Cancel</button>
+            <button mat-raised-button color="primary" type="submit">Add Tour</button>
+          </div>
+        </mat-card>
+    </form>
+</div>

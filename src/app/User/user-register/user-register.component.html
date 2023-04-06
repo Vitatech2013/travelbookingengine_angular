@@ -1,0 +1,52 @@
+<app-home></app-home>
+<mat-card>
+    <mat-toolbar style="background: rgb(187, 61, 117);">User-Register</mat-toolbar>
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+                <mat-label> Name </mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+                <mat-label> Surname </mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+                <mat-label> Password </mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+                <mat-label> Email Id </mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+                <mat-label> Mobile No </mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+                <mat-label> Address </mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="text-center mb-4 ms-3">
+        <button mat-raised-button color="warn">Cancel</button>
+        <button mat-raised-button color="primary" class="ms-2">Register</button>
+    </div>
+    <a routerLink="/user-login" class="text-center text-primary mb-2 fw-bold">Already have an account.! Go to Login</a>
+</mat-card>
+

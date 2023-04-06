@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-toolbar>Tours</mat-toolbar>
+    <div class="table-responsive">
+    <table class="table table-striped ">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">TourNmae</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Mobile No</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tour of data index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{tour.tourname}}</td>
+            <td>{{tour.source}}</td>
+            <td>{{tour.destination}}</td>
+            <td>{{tour.desc}}</td>
+            <td>{{tour.price}}</td>
+            <td>{{tour.mobileno}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+</mat-card>

@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport style="background: rgb(138, 149, 214);"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar style="background:white">Menu</mat-toolbar>
+    <mat-nav-list >
+      <a mat-list-item routerLink="admin-addtours" >Add Tours</a>
+      <a mat-list-item routerLink="admin-viewtours">View Tours</a>
+      <a mat-list-item routerLink="admin-viewbookings">View Booking</a>
+      <a mat-list-item routerLink="admin-viewfeedback">View Feedback</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="background: rgb(22, 141, 162);">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Front-End</span>
+      <span style="flex:1 1 auto"></span>
+      <button mat-raised-button color="warn" routerLink="/admin-login">Logout</button>
+    </mat-toolbar>
+<router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
