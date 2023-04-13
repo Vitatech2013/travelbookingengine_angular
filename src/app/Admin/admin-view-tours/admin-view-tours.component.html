@@ -1,5 +1,5 @@
 <mat-card>
-    <mat-toolbar>Tours</mat-toolbar>
+    <mat-toolbar style="background: rgb(94, 210, 148);">Tours</mat-toolbar>
     <div class="table-responsive">
     <table class="table table-striped ">
         <thead>
@@ -11,12 +11,13 @@
             <th scope="col">Description</th>
             <th scope="col">Price</th>
             <th scope="col">Mobile No</th>
+            <th scope="col">Action</th>
 
 
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let tour of data index as i">
+          <tr *ngFor="let tour of tdata index as i">
             <th scope="row">{{i+1}}</th>
             <td>{{tour.tourname}}</td>
             <td>{{tour.source}}</td>
@@ -24,6 +25,14 @@
             <td>{{tour.desc}}</td>
             <td>{{tour.price}}</td>
             <td>{{tour.mobileno}}</td>
+            <td>
+              <button mat-icon-button color="warn" (click)="deletetour(tour)" >
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button mat-icon-button color="primary" (click)="edit(tour)">
+                <mat-icon>edit</mat-icon>
+              </button>
+            </td>
           </tr>
           
         </tbody>

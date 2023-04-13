@@ -22,6 +22,7 @@ const routes: Routes = [
   {path : 'admin-login' , component:AdminLoginComponent},
   {path:'admin-navbar' , component:AdminNavbarComponent ,
   children : [
+    {path:'',redirectTo:'admin-addtours',pathMatch:'full'},
     {path:'admin-addtours' , component:AdminAddToursComponent},
     {path:'admin-viewtours' , component:AdminViewToursComponent},
     {path:'admin-viewbookings' , component:AdminViewBookingComponent},
@@ -32,7 +33,7 @@ const routes: Routes = [
   {path:'user-login' , component:UserLoginComponent},
   {path:'user-navbar' , component:UserNavbarComponent,
   children:[
-    {path:'user-profile' , component:UserProfileComponent},
+    {path:'',redirectTo:'user-viewtours',pathMatch:'full'},
     {path:'user-viewtours' , component:UserViewToursComponent},
     {path:'user-booking' , component:UserBookingComponent},
     {path:'user-viewbooking', component:UserViewBookingComponent},

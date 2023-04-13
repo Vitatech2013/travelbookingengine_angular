@@ -1,21 +1,20 @@
-<app-home></app-home>
+<app-home-nav></app-home-nav>
 <div>
-    <form>
+    <form [formGroup]="userloginform" (ngSubmit)="userLogin()" >
         <mat-card>
             <mat-toolbar style="background: rgb(174, 197, 136);">User-Login</mat-toolbar>
             <mat-form-field appearance="outline">
                 <mat-label>Mobile No</mat-label>
-                <input matInput placeholder="Enter Your MobileNo">
+                <input matInput placeholder="Enter Your MobileNo" formControlName="mobileno">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Enter Your Password">
+                <input matInput placeholder="Enter Your Password" formControlName="password">
             </mat-form-field>
             <div class="text-center mb-3">
-                <button mat-raised-button color="primary" routerLink="/user-navbar">Login</button>
+                <button mat-raised-button color="primary" >Login</button>
             </div>
-           
-  <a routerLink="/user-register" class="text-center text-danger mb-2 fw-bold"> Do not have Account...? Register Here..</a>
+  <a class="text-center text-danger mb-2 fw-bold" routerLink="/user-register"> Do not have Account...? Register Here..</a>
         </mat-card>
     </form>
 </div>

@@ -1,93 +1,87 @@
 <div>
-    <form>
+    <form [formGroup]="userbookingform" (ngSubmit)="addbooking()">
         <mat-card>
-            <mat-toolbar>Book-Trip</mat-toolbar>
-            <mat-form-field appearance="fill">
-                <mat-label>Favorite food</mat-label>
-                <mat-select [(ngModel)]="selectedValue" name="food">
-                  <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
-                  </mat-option>
-                </mat-select>
+            <mat-toolbar style="background: rgb(134, 172, 76);">Book-Trip</mat-toolbar>
+         <div class="row">
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>User Number</mat-label>
+                    <input matInput  readonly formControlName="userno">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Choose Today date only</mat-label>
+                    <input matInput  [matDatepicker]="picker1" formControlName="date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+            </div>
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Tourname</mat-label>
+                    <input matInput  readonly  formControlName="tourname">
+                </mat-form-field>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Source</mat-label>
+                    <input matInput  readonly formControlName="source" >
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Destination</mat-label>
+                    <input matInput   readonly formControlName="destination">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
+                <mat-form-field  appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <input matInput  readonly formControlName="desciption">
+                </mat-form-field>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" >
+                    <mat-label>Price</mat-label>
+                    <input matInput  readonly formControlName="price"  >
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>No of Days</mat-label>
+                    <input matInput    type="number" formControlName="noofdays"> 
+                </mat-form-field>
+            </div>
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="nfield">
+                    <mat-label>Total Amount</mat-label>
+                    <input matInput   formControlName="totalamount" readonly >  
+                </mat-form-field>
+                <button type="button" class="btn btn-success ms-1" (click)="cal()">Get Amount</button>
+            </div>
+         </div>
+         <div >
+        
+            <mat-form-field class="example-full-width" appearance="outline" class="dfield">
+                <mat-label>Date of Journey</mat-label>
+                <input matInput  [matDatepicker]="picker2" formControlName="dateofjourney" >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
               </mat-form-field>
-            <div class="row">
-                 <div class="col-sm-6">
-                    <mat-form-field>
-                        <mat-label>User number</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-6">
-                    <mat-form-field appearance="fill" class="example-form-field">
-                        <mat-label>Date</mat-label>
-                        <input matInput [matDatepicker]="datepicker">
-                        <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
-                        <mat-datepicker #datepicker>
-                          <mat-datepicker-actions>
-                            <button mat-button matDatepickerCancel>Cancel</button>
-                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                          </mat-datepicker-actions>
-                        </mat-datepicker>
-                      </mat-form-field>
-                </div>
+                      
             </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <mat-form-field>
-                        <mat-label>Source</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-6">
-                    <mat-form-field>
-                        <mat-label>Destination</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                </div>
+            <div class="text-center mb-3">
+                <button mat-raised-button  color="warn" mat-dialog-close>Cancel</button>
+                <button mat-raised-button type="submit" color="primary" class="ms-2 me-2">Booktrip</button>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <mat-form-field>
-                        <mat-label>Description</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-6">
-                    <mat-form-field>
-                        <mat-label>Price</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <mat-form-field>
-                        <mat-label>No of Seats</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-4">
-                    <mat-form-field>
-                        <mat-label>Total Amount</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-4">
-                    <mat-form-field appearance="fill" class="example-form-field">
-                        <mat-label>Date of Journey</mat-label>
-                        <input matInput [matDatepicker]="datepicker">
-                        <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
-                        <mat-datepicker #datepicker>
-                          <mat-datepicker-actions>
-                            <button mat-button matDatepickerCancel>Cancel</button>
-                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                          </mat-datepicker-actions>
-                        </mat-datepicker>
-                      </mat-form-field>
-                </div>
-            </div>
+       
         </mat-card>
     </form>
 </div>

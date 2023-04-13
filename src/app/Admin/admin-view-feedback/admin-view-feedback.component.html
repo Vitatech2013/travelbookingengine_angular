@@ -1,1 +1,27 @@
-<p>admin-view-feedback works!</p>
+<mat-card>
+    <mat-toolbar style="background: rgb(202, 150, 106);">Tours</mat-toolbar>
+    <div class="table-responsive">
+    <table class="table table-striped ">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">UserName</th>
+            <th scope="col">Email Id</th>
+            <th scope="col">FeedBack</th>
+            
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fdata of feed index as i">
+           <td>{{i+1}}</td>
+           <td>{{fdata.username}}</td>
+           <td>{{fdata.emailid}}</td>
+           <td>{{fdata.message}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+</mat-card>

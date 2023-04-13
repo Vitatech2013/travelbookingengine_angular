@@ -1,1 +1,22 @@
-<p>user-add-feedback works!</p>
+<div>
+    <form [formGroup]="feedbackform" (ngSubmit)="Addfeedback()">
+        <mat-card>
+            <mat-toolbar style="background: rgb(120, 163, 220);">Add FeedBack</mat-toolbar>
+            <mat-form-field class="mt-5" appearance="outline">
+                <mat-label>UserName</mat-label>
+                <input matInput formControlName="username" readonly>
+            </mat-form-field >
+            <mat-form-field appearance="outline">
+                <mat-label>Email Id</mat-label>
+                <input matInput formControlName="emailid" readonly>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Feedback</mat-label>
+                <input matInput formControlName="message">
+            </mat-form-field>
+            <div class="text-center mb-3">
+                <button mat-raised-button color="accent">Add Feedback</button>
+            </div>
+        </mat-card>
+    </form>
+</div>

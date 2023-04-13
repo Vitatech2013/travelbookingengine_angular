@@ -1,1 +1,40 @@
-<p>user-view-booking works!</p>
+<mat-card>
+    <mat-toolbar style="background: rgb(199, 145, 190);">Tours</mat-toolbar>
+    <div class="table-responsive">
+    <table class="table table-striped ">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Your Number</th>
+            <th scope="col">Date</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Tourname</th>
+            <th scope="col">Desciption</th>
+            <th scope="col">Price</th>
+            <th scope="col">No Of Days</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Date Of Journey</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of bookings index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{data.userno}}</td>
+            <td>{{data.date | date:'dd/MM/yyyy'}}</td>
+            <td>{{data.source}}</td>
+            <td>{{data.destination}}</td>
+            <td>{{data.tourname}}</td>
+            <td>{{data.desciption}}</td>
+            <td>{{data.price}}</td>
+            <td>{{data.noofdays}}</td>
+            <td>{{data.totalamount}}</td>
+            <td>{{data.dateofjourney|date:'dd/MM/yyyy'}}</td>
+            
+            
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+</mat-card>

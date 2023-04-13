@@ -1,1 +1,36 @@
-<p>user-view-tours works!</p>
+<mat-card>
+    <mat-toolbar style="background: rgb(180, 102, 132);">Tours</mat-toolbar>
+    <div class="table-responsive">
+    <table class="table table-striped ">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">TourName</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Mobile No</th>
+            <th scope="col">Actions</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of tdata index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{data.tourname}}</td>
+            <td>{{data.source}}</td>
+            <td>{{data.destination}}</td>
+            <td>{{data.desc}}</td>
+            <td>{{data.price}}</td>
+            <td>{{data.mobileno}}</td>
+            <td>
+              <button mat-raised-button color="accent" (click)="booktrip(data)">Book</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+</mat-card>

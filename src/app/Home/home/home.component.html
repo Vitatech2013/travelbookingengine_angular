@@ -1,13 +1,24 @@
-<div class="container-fluid">
-<div class="row">
-    <h2>Welcome To Travel Booking Engine</h2>
-    <div class="nav">
-      <h3>
-        <a routerLink="/Home" routerLinkActive="Active" >HOME</a> 
-        <a routerLink="/admin-login"  routerLinkActive="Active">ADMIN</a> 
-        <a  routerLink="/user-login"  routerLinkActive="Active">USER</a>  
-        <a >ABOUT US</a>  
-        <a >CONTACT US</a></h3>
+<app-home-nav></app-home-nav>
+
+
+<mat-card>
+    <mat-toolbar color="accent">Please Login</mat-toolbar>
+    <div class="row">
+    <div class="col-sm-6">
+        <a routerLink="/admin-login">
+        <img src="/assets/images/admin-logo.avif" width="80%" height="60%">
+    </a>
+    <div>
+        <h2>ADMIN</h2>
     </div>
+    </div>
+   <div class="col-sm-6">
+    <a routerLink="/user-login">
+    <img src="/assets/images/user-logo.jpg"  width="80%" height="60%">
+</a>
+<div>
+    <h2>USER</h2>
 </div>
+   </div>
 </div>
+    </mat-card>

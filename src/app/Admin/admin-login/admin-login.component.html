@@ -1,18 +1,18 @@
-<app-home></app-home>
+<app-home-nav></app-home-nav>
 <div>
-    <form>
+    <form [formGroup]="adminloginform" >
         <mat-card>
             <mat-toolbar style="background: rgb(130, 199, 144);">Admin Login</mat-toolbar>
             <mat-form-field appearance="outline">
                 <mat-label>UserName</mat-label>
-                <input matInput placeholder="Enter Your Username">
+                <input matInput placeholder="Enter Your Username" formControlName="username">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Enter Your Password">
+                <input matInput placeholder="Enter Your Password" formControlName="password">
             </mat-form-field>
             <div class="text-center mb-3">
-                <button mat-raised-button color="primary" routerLink="/admin-navbar">Login</button>
+                <button mat-raised-button color="primary" (click)="adminlogin()">Login</button>
             </div>
         </mat-card>
     </form>
